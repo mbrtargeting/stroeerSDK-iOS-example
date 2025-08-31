@@ -9,7 +9,7 @@ class BannerViewDelegate: YLBannerViewDelegate {
     private var adSlotId: String?
     
     weak var viewController: UIViewController?
-    weak var adView: GADBannerView?
+    weak var adView: UIView?
     
     init(adSlotId: String, viewController: UIViewController, bannerViewHeight: Binding<CGFloat>) {
         self.adSlotId = adSlotId
@@ -22,14 +22,27 @@ class BannerViewDelegate: YLBannerViewDelegate {
     }
     
     public func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
-        adView = bannerView.getBannerView()
-        print("this ad is from \(bannerView.getAdSource().description)")
+        if let existingAdView = adView {
+            existingAdView.removeFromSuperview()
+            adView = nil
+        }
         
-        viewController?.view.addSubview(bannerView.getBannerView())
-        Yieldlove.instance.resizeBanner(banner: bannerView) {
-            if let height = self.adView?.adSize.size.height {
-                self.bannerViewHeight = height
-            }
+        print("This ad is from \(bannerView.getSource())")
+        
+        if let adContainer = viewController?.view {
+            adContainer.addSubview(bannerView)
+            
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                bannerView.centerXAnchor.constraint(equalTo: adContainer.centerXAnchor),
+                bannerView.centerYAnchor.constraint(equalTo: adContainer.centerYAnchor),
+            ])
+        }
+        
+        adView = bannerView
+        
+        DispatchQueue.main.async {
+            self.$bannerViewHeight.wrappedValue = bannerView.frame.height
         }
     }
     
@@ -49,11 +62,11 @@ class BannerViewDelegate: YLBannerViewDelegate {
     
     func clearBanner() {
         adView?.removeFromSuperview()
-        adView?.delegate = nil
+        adView = nil
     }
     
-    func getGAMRequest() -> GAMRequest {
-        let publishersRequest = GAMRequest()
+    func getGAMRequest() -> AdManagerRequest {
+        let publishersRequest = AdManagerRequest()
         publishersRequest.contentURL = "http://jobs.stroeer-labs.com"
         return publishersRequest
     }
