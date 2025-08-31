@@ -1,26 +1,26 @@
 PODS:
-  - AATKit (3.12.0):
-    - AATKit/Default (= 3.12.0)
-  - AATKit/AATGooglePartnerBidding (3.12.0):
+  - AATKit (3.12.3):
+    - AATKit/Default (= 3.12.3)
+  - AATKit/AATGooglePartnerBidding (3.12.3):
     - AATKit/Core
     - AATKit/GoogleMobileAds
     - AATKit/GraviteRTB
-  - AATKit/Admob (3.12.0):
+  - AATKit/Admob (3.12.3):
     - AATKit/GoogleMobileAds
-  - AATKit/AdX (3.12.0):
+  - AATKit/AdX (3.12.3):
     - AATKit/GoogleMobileAds
-  - AATKit/AppLovin (3.12.0):
+  - AATKit/AppLovin (3.12.3):
     - AATKit/AppLovinSDK
-  - AATKit/AppLovinMax (3.12.0):
+  - AATKit/AppLovinMax (3.12.3):
     - AATKit/AppLovinSDK
-  - AATKit/AppLovinSDK (3.12.0):
+  - AATKit/AppLovinSDK (3.12.3):
     - AATKit/Core
-    - AppLovinSDK (= 13.0.1)
-  - AATKit/Core (3.12.0)
-  - AATKit/CriteoSDK (3.12.0):
+    - AppLovinSDK (= 13.2.0)
+  - AATKit/Core (3.12.3)
+  - AATKit/CriteoSDK (3.12.3):
     - AATKit/Core
     - CriteoPublisherSdk (= 6.1.2)
-  - AATKit/Default (3.12.0):
+  - AATKit/Default (3.12.3):
     - AATKit/AATGooglePartnerBidding
     - AATKit/Admob
     - AATKit/AdX
@@ -31,7 +31,6 @@ PODS:
     - AATKit/Facebook
     - AATKit/GraviteRTB
     - AATKit/Inmobi
-    - AATKit/IronSource
     - AATKit/Mintegral
     - AATKit/OguryAds
     - AATKit/PubNative
@@ -41,52 +40,49 @@ PODS:
     - AATKit/Unity
     - AATKit/Vungle
     - AATKit/YOC
-  - AATKit/DFP (3.12.0):
+  - AATKit/DFP (3.12.3):
     - AATKit/GoogleMobileAds
-  - AATKit/Facebook (3.12.0):
+  - AATKit/Facebook (3.12.3):
     - AATKit/GoogleMobileAds
-    - GoogleMobileAdsMediationFacebook (= 6.15.2.0)
-  - AATKit/GoogleMobileAds (3.12.0):
+    - GoogleMobileAdsMediationFacebook (= 6.17.1.0)
+  - AATKit/GoogleMobileAds (3.12.3):
     - AATKit/Core
-    - Google-Mobile-Ads-SDK (= 11.12.0)
-  - AATKit/GraviteRTB (3.12.0):
+    - Google-Mobile-Ads-SDK (= 12.2.0)
+  - AATKit/GraviteRTB (3.12.3):
     - AATKit/Core
-    - RTBSDK (= 1.6.0)
-  - AATKit/Inmobi (3.12.0):
+    - RTBSDK (= 1.6.2)
+  - AATKit/Inmobi (3.12.3):
     - AATKit/Core
     - InMobiSDK (= 10.8.0)
-  - AATKit/IronSource (3.12.0):
-    - AATKit/Core
-    - IronSourceSDK (= 8.3.0.0)
-  - AATKit/Mintegral (3.12.0):
+  - AATKit/Mintegral (3.12.3):
     - AATKit/Core
     - MintegralAdSDK/BidBannerAd (= 7.7.3)
     - MintegralAdSDK/BidNewInterstitialAd
     - MintegralAdSDK/BidRewardVideoAd
     - MintegralAdSDK/BidSplashAd
-  - AATKit/OguryAds (3.12.0):
+  - AATKit/OguryAds (3.12.3):
     - AATKit/Core
     - OgurySdk (= 5.0.1)
-  - AATKit/PubNative (3.12.0):
+  - AATKit/PubNative (3.12.3):
     - AATKit/Core
-  - AATKit/Smaato (3.12.0):
+  - AATKit/Smaato (3.12.3):
     - AATKit/Core
-    - smaato-ios-sdk (= 22.9.1)
-  - AATKit/SmartAdServer (3.12.0):
+    - smaato-ios-sdk (= 22.9.3)
+  - AATKit/SmartAdServer (3.12.3):
     - AATKit/Core
     - Smart-Display-SDK (= 7.24.2)
-  - AATKit/Tappx (3.12.0):
+  - AATKit/Tappx (3.12.3):
     - AATKit/Core
-    - TappxSDK (= 4.1.11)
-  - AATKit/Unity (3.12.0):
+    - TappxSDK (= 4.2.0)
+  - AATKit/Unity (3.12.3):
     - AATKit/Core
     - UnityAds (= 4.12.4)
-  - AATKit/Vungle (3.12.0):
+  - AATKit/Vungle (3.12.3):
     - AATKit/Core
-    - VungleAds (= 7.4.2)
-  - AATKit/YOC (3.12.0):
+    - VungleAds (= 7.4.5)
+  - AATKit/YOC (3.12.3):
     - AATKit/Core
-  - AppLovinSDK (13.0.1)
+  - AppLovinSDK (13.2.0)
   - ConsentViewController (7.7.8):
     - Down (~> 0.11.0)
     - SPMobileCore (= 0.0.11)
@@ -96,15 +92,14 @@ PODS:
     - CriteoPublisherSdk/Sdk (= 6.1.2)
   - CriteoPublisherSdk/Sdk (6.1.2):
     - CriteoMRAID (~> 1.0.1)
-  - FBAudienceNetwork (6.15.2)
-  - Google-Mobile-Ads-SDK (11.12.0):
+  - FBAudienceNetwork (6.17.1)
+  - Google-Mobile-Ads-SDK (12.2.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleMobileAdsMediationFacebook (6.15.2.0):
-    - FBAudienceNetwork (= 6.15.2)
-    - Google-Mobile-Ads-SDK (~> 11.0)
+  - GoogleMobileAdsMediationFacebook (6.17.1.0):
+    - FBAudienceNetwork (= 6.17.1)
+    - Google-Mobile-Ads-SDK (~> 12.0)
   - GoogleUserMessagingPlatform (3.0.0)
   - InMobiSDK (10.8.0)
-  - IronSourceSDK (8.3.0.0)
   - MintegralAdSDK/BannerAd (7.7.3):
     - MintegralAdSDK/NativeAd
   - MintegralAdSDK/BidBannerAd (7.7.3):
@@ -143,9 +138,9 @@ PODS:
   - OgurySdk/OguryAds (5.0.1):
     - OguryAds (= 4.0.1)
     - OguryCore (= 2.0.0)
-  - PrebidMobile (2.3.1):
-    - PrebidMobile/core (= 2.3.1)
-  - PrebidMobile/core (2.3.1)
+  - PrebidMobile (2.5.0):
+    - PrebidMobile/core (= 2.5.0)
+  - PrebidMobile/core (2.5.0)
   - PromiseKit (8.2.0):
     - PromiseKit/CorePromise (= 8.2.0)
     - PromiseKit/Foundation (= 8.2.0)
@@ -155,78 +150,78 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (8.2.0):
     - PromiseKit/CorePromise
-  - RTBSDK (1.6.0):
-    - RTBSDK/Default (= 1.6.0)
-  - RTBSDK/Core (1.6.0)
-  - RTBSDK/Default (1.6.0):
+  - RTBSDK (1.6.2):
+    - RTBSDK/Default (= 1.6.2)
+  - RTBSDK/Core (1.6.2)
+  - RTBSDK/Default (1.6.2):
     - RTBSDK/Core
-  - smaato-ios-sdk (22.9.1):
-    - smaato-ios-sdk/Full (= 22.9.1)
-  - smaato-ios-sdk/Banner (22.9.1):
+  - smaato-ios-sdk (22.9.3):
+    - smaato-ios-sdk/Full (= 22.9.3)
+  - smaato-ios-sdk/Banner (22.9.3):
     - smaato-ios-sdk/Modules/Banner
     - smaato-ios-sdk/Modules/Core
     - smaato-ios-sdk/Modules/RichMedia
-  - smaato-ios-sdk/Full (22.9.1):
+  - smaato-ios-sdk/Full (22.9.3):
     - smaato-ios-sdk/Banner
     - smaato-ios-sdk/Interstitial
     - smaato-ios-sdk/Native
     - smaato-ios-sdk/Outstream
     - smaato-ios-sdk/RewardedAds
-  - smaato-ios-sdk/Interstitial (22.9.1):
+  - smaato-ios-sdk/Interstitial (22.9.3):
     - smaato-ios-sdk/Modules/Interstitial
     - smaato-ios-sdk/Modules/RichMedia
     - smaato-ios-sdk/Modules/Video
-  - smaato-ios-sdk/Modules/Banner (22.9.1):
+  - smaato-ios-sdk/Modules/Banner (22.9.3):
     - smaato-ios-sdk/Modules/Core
-  - smaato-ios-sdk/Modules/Core (22.9.1)
-  - smaato-ios-sdk/Modules/Interstitial (22.9.1):
+  - smaato-ios-sdk/Modules/Core (22.9.3)
+  - smaato-ios-sdk/Modules/Interstitial (22.9.3):
     - smaato-ios-sdk/Modules/Core
-  - smaato-ios-sdk/Modules/Native (22.9.1):
+  - smaato-ios-sdk/Modules/Native (22.9.3):
     - smaato-ios-sdk/Modules/Core
-  - smaato-ios-sdk/Modules/OpenMeasurement (22.9.1):
+  - smaato-ios-sdk/Modules/OpenMeasurement (22.9.3):
     - smaato-ios-sdk/Modules/Core
-  - smaato-ios-sdk/Modules/Outstream (22.9.1):
+  - smaato-ios-sdk/Modules/Outstream (22.9.3):
     - smaato-ios-sdk/Modules/Banner
     - smaato-ios-sdk/Modules/Core
     - smaato-ios-sdk/Modules/RichMedia
-  - smaato-ios-sdk/Modules/RewardedAds (22.9.1):
+  - smaato-ios-sdk/Modules/RewardedAds (22.9.3):
     - smaato-ios-sdk/Modules/Core
-  - smaato-ios-sdk/Modules/RichMedia (22.9.1):
-    - smaato-ios-sdk/Modules/Core
-    - smaato-ios-sdk/Modules/OpenMeasurement
-  - smaato-ios-sdk/Modules/Video (22.9.1):
+  - smaato-ios-sdk/Modules/RichMedia (22.9.3):
     - smaato-ios-sdk/Modules/Core
     - smaato-ios-sdk/Modules/OpenMeasurement
-  - smaato-ios-sdk/Native (22.9.1):
+  - smaato-ios-sdk/Modules/Video (22.9.3):
+    - smaato-ios-sdk/Modules/Core
+    - smaato-ios-sdk/Modules/OpenMeasurement
+  - smaato-ios-sdk/Native (22.9.3):
     - smaato-ios-sdk/Modules/Core
     - smaato-ios-sdk/Modules/Native
-  - smaato-ios-sdk/Outstream (22.9.1):
+  - smaato-ios-sdk/Outstream (22.9.3):
     - smaato-ios-sdk/Modules/Outstream
-  - smaato-ios-sdk/RewardedAds (22.9.1):
+  - smaato-ios-sdk/RewardedAds (22.9.3):
     - smaato-ios-sdk/Modules/RewardedAds
     - smaato-ios-sdk/Modules/Video
   - Smart-Display-SDK (7.24.2)
   - SPMobileCore (0.0.11)
-  - TappxSDK (4.1.11):
-    - TappxSDK/TappxFramework (= 4.1.11)
-  - TappxSDK/OMSDK_Tappx (4.1.11)
-  - TappxSDK/TappxFramework (4.1.11):
+  - TappxSDK (4.2.0):
+    - TappxSDK/TappxFramework (= 4.2.0)
+  - TappxSDK/OMSDK_Tappx (4.2.0)
+  - TappxSDK/TappxFramework (4.2.0):
     - TappxSDK/OMSDK_Tappx
   - UnityAds (4.12.4)
-  - VungleAds (7.4.2)
-  - YieldloveAdIntegration/Consent (10.1.0):
+  - VungleAds (7.4.5)
+  - YieldloveAdIntegration/Consent (10.2.0):
     - ConsentViewController (~> 7.7.7)
     - YieldloveAdIntegration/Core
-  - YieldloveAdIntegration/Core (10.1.0):
-    - Google-Mobile-Ads-SDK (~> 11)
-    - PrebidMobile (~> 2.3.1)
+  - YieldloveAdIntegration/Core (10.2.0):
+    - Google-Mobile-Ads-SDK (~> 12)
+    - PrebidMobile (= 2.5.0)
     - PromiseKit (~> 8)
-  - YieldloveAdIntegration/Gravite (10.1.0):
-    - AATKit/Core
+  - YieldloveAdIntegration/Gravite (10.2.0):
+    - AATKit/Core (= 3.12.3)
     - YieldloveAdIntegration/Core
 
 DEPENDENCIES:
-  - AATKit (= 3.12.0)
+  - AATKit (= 3.12.3)
   - YieldloveAdIntegration/Consent
   - YieldloveAdIntegration/Gravite
 
@@ -242,7 +237,6 @@ SPEC REPOS:
     - GoogleMobileAdsMediationFacebook
     - GoogleUserMessagingPlatform
     - InMobiSDK
-    - IronSourceSDK
     - MintegralAdSDK
     - OguryAds
     - OguryCore
@@ -259,32 +253,31 @@ SPEC REPOS:
     - YieldloveAdIntegration
 
 SPEC CHECKSUMS:
-  AATKit: 80249933da3441731d7739b74b3dc8e2cb808b8a
-  AppLovinSDK: fdae6a4361c9c9b09f8d7d18ede792368221d987
+  AATKit: f917d96fa564603561b9983b1067c50b8b5b3c29
+  AppLovinSDK: 1eb88a82b4feea9f3696ce9cc1e3343c4997ee12
   ConsentViewController: ac0feae5245788d1882f81ed818e97546c7e351b
   CriteoMRAID: a037bee17b929a8bede8a07279e01a269cd85210
   CriteoPublisherSdk: 710001048da8bde09116fc9812c879d4cdfcd480
-  FBAudienceNetwork: 2457a89b45e2596241fd81b0c2fd8cb6f6053869
-  Google-Mobile-Ads-SDK: 3a76704456669fbed2057efc8bdb99050ad0e3fb
-  GoogleMobileAdsMediationFacebook: 9308a6fea5d2a41a935119378a56b1b2e9624415
+  FBAudienceNetwork: eb3ffbf2b35df25e21e163657044ffef66616a40
+  Google-Mobile-Ads-SDK: 1dfb0c3cb46c7e2b00b0f4de74a1e06d9ea25d67
+  GoogleMobileAdsMediationFacebook: 750a2c14ce0bdf813e4e1d4ab4aa283f72f8a875
   GoogleUserMessagingPlatform: f8d0cdad3ca835406755d0a69aa634f00e76d576
   InMobiSDK: 0cfb1a1eb5112fa0236ae1fab549e31fb96c9566
-  IronSourceSDK: 2dbbc8b9d20cbc4a60901e07e0aa5f3bf6a15d9a
   MintegralAdSDK: 217cca20529055c8791c82985dd7a74864e49fd0
   OguryAds: 5bb3440777dbe8439621985761f5ebdf0b8c593c
   OguryCore: 1c7c2009f958b7026d5bca89e4c97dfa3fa9ef87
   OgurySdk: 95d23dee02e7c022f72328652b3e0d3eb694512a
-  PrebidMobile: 08e88fe737eed02b93f49ef83f8dc147710b3f62
+  PrebidMobile: 5dbcb5e3c00313803d20f5c4e45a3357c049cd01
   PromiseKit: 74e6ab5894856b4762fef547055c809bca91d440
-  RTBSDK: d8c5544dc755d80e4e36912567c701033243b9ae
-  smaato-ios-sdk: cb9939713a4906a7901730aaa531b4004912c95d
+  RTBSDK: e564c4556eeb79f1170d7cfb17a7182f24d52484
+  smaato-ios-sdk: afa210ca22398b9ae75fddc921472b05e0bb3d37
   Smart-Display-SDK: e2c9c881236a0a9f0f6e99e2a2410ca74d9bb41a
   SPMobileCore: 25424fc2f649f2b7537390dd68186133507ffcf3
-  TappxSDK: 08461fc35f3671b9e60ad87c047ee5890f0252cc
+  TappxSDK: 8099f23a66bb4d5facca3133d9fd69249a098b4d
   UnityAds: df29459d94ca7c0676cdd9ba96ef6420670ffbfa
-  VungleAds: d7cf66a6dfd390a583ea2b2cfb9af1043b686e58
-  YieldloveAdIntegration: 6040b86658f7bbf0ef021deedd068b720d820445
+  VungleAds: 1da221690dd1a8710d0b6a4c7aeac14cb12d31ab
+  YieldloveAdIntegration: 7a5d41bdc43e61c325909e713e5308ac06294d7b
 
-PODFILE CHECKSUM: b6b731847f9212073c4a7c1b16ad7620179d2540
+PODFILE CHECKSUM: e9280fa46b1fd304b7941f4fdce939a8737ca6b9
 
 COCOAPODS: 1.16.2
