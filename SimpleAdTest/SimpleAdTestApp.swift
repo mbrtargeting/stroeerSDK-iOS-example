@@ -19,7 +19,7 @@ struct SimpleAdTestApp: App {
         
         Yieldlove.setup(appName: "appDfpTest")
         Yieldlove.enableDebugMode()
-        Yieldlove.enableInspectionMode()
+        // Yieldlove.enableInspectionMode()
 
         // Confiant
 //        ConfiantLoader.shared.enableTestMode()

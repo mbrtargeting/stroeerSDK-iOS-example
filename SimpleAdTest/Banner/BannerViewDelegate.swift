@@ -21,15 +21,14 @@ class BannerViewDelegate: YLBannerViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
         if let existingAdView = adView {
             existingAdView.removeFromSuperview()
             adView = nil
         }
-        
-        print("This ad is from \(bannerView.getSource())")
-        
+            
         if let adContainer = viewController?.view {
+            Yieldlove.instance.resizeBanner(banner: bannerView)
             adContainer.addSubview(bannerView)
             
             bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,9 +40,15 @@ class BannerViewDelegate: YLBannerViewDelegate {
         
         adView = bannerView
         
-        DispatchQueue.main.async {
-            self.$bannerViewHeight.wrappedValue = bannerView.frame.height
+        Yieldlove.instance.resizeBanner(banner: bannerView) {
+            if let height = self.adView?.frame.height {
+                DispatchQueue.main.async {
+                    self.$bannerViewHeight.wrappedValue = height
+                    SLogger.i("This ad is from \(bannerView.getSource().description), \(height) - \(bannerView.bannerInfo.getPlacementName())")
+                }
+            }
         }
+        
     }
     
     public func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
