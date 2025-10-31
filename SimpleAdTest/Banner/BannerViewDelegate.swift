@@ -28,7 +28,6 @@ class BannerViewDelegate: YLBannerViewDelegate {
         }
             
         if let adContainer = viewController?.view {
-            Yieldlove.instance.resizeBanner(banner: bannerView)
             adContainer.addSubview(bannerView)
             
             bannerView.translatesAutoresizingMaskIntoConstraints = false
