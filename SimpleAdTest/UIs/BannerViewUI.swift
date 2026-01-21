@@ -10,37 +10,26 @@ import SwiftUI
 
 struct BannerViewUI : View
 {
-    @State private var bannerViewHeight1: CGFloat = 250
-    @State private var bannerViewHeight2: CGFloat = 250
-    
-    // var adSlotName: String? = nil
-    var onDisappearListener1 = OnUIEventListener(name: "Disappear")
-    var onReappearListener1 = OnUIEventListener(name: "Appear")
-    var onDisappearListener2 = OnUIEventListener(name: "Disappear")
-    var onReappearListener2 = OnUIEventListener(name: "Appear")
-    @State private var refreshView = [false, false]
+    @State private var size1: CGSize = .zero
+    @State private var size2: CGSize = .zero
     
     var body: some View {
         VStack {
-            BannerViewControllerRepresentable(adSlotName: "banner", bannerViewHeight: $bannerViewHeight1, onDisappearListener: onDisappearListener1, onReappearListener: onReappearListener1)
-                .onAppear {
-                    onReappearListener1.call()
+            BannerViewRepresentable(
+                slotId: "banner",
+                onAdSize: { size in
+                    self.size1 = size
                 }
-                .onDisappear {
-                    onDisappearListener1.call()
-                }
-                .frame(width: 320, height: self.bannerViewHeight1, alignment: .center)
-                .id(refreshView[0])
+            )
+            .frame(width: size1.width, height: size1.height)
             
-            BannerViewControllerRepresentable(adSlotName: "banner", bannerViewHeight: $bannerViewHeight2, onDisappearListener: onDisappearListener2, onReappearListener: onReappearListener2)
-                .onAppear {
-                    onReappearListener2.call()
+            BannerViewRepresentable(
+                slotId: "banner",
+                onAdSize: { size in
+                    self.size2 = size
                 }
-                .onDisappear {
-                    onDisappearListener2.call()
-                }
-                .frame(width: 320, height: self.bannerViewHeight2, alignment: .center)
-                .id(refreshView[1])
+            )
+            .frame(width: size2.width, height: size2.height)
         }
     }
 }

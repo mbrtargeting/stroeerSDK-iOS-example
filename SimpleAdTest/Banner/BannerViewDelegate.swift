@@ -3,18 +3,12 @@ import YieldloveAdIntegration
 import GoogleMobileAds
 
 class BannerViewDelegate: YLBannerViewDelegate {
+    var viewController: UIViewController
+    var onAdSize: ((CGSize) -> Void)?
     
-    @Binding var bannerViewHeight: CGFloat
-    
-    private var adSlotId: String?
-    
-    weak var viewController: UIViewController?
-    weak var adView: UIView?
-    
-    init(adSlotId: String, viewController: UIViewController, bannerViewHeight: Binding<CGFloat>) {
-        self.adSlotId = adSlotId
+    init(viewController: UIViewController, onAdSize: ((CGSize) -> Void)? = nil) {
         self.viewController = viewController
-        self._bannerViewHeight = bannerViewHeight
+        self.onAdSize = onAdSize
     }
     
     required init?(coder: NSCoder) {
@@ -22,51 +16,16 @@ class BannerViewDelegate: YLBannerViewDelegate {
     }
     
     func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
-        if let existingAdView = adView {
-            existingAdView.removeFromSuperview()
-            adView = nil
-        }
-            
-        if let adContainer = viewController?.view {
-            adContainer.addSubview(bannerView)
-            
-            bannerView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                bannerView.centerXAnchor.constraint(equalTo: adContainer.centerXAnchor),
-                bannerView.centerYAnchor.constraint(equalTo: adContainer.centerYAnchor),
-            ])
-        }
-        
-        adView = bannerView
-        
+        viewController.view.addSubview(bannerView)
+
         Yieldlove.instance.resizeBanner(banner: bannerView) {
-            if let height = self.adView?.frame.height {
-                DispatchQueue.main.async {
-                    self.$bannerViewHeight.wrappedValue = height
-                    SLogger.i("This ad is from \(bannerView.getSource().description), \(height) - \(bannerView.bannerInfo.getPlacementName())")
-                }
-            }
+            let size = bannerView.intrinsicContentSize
+            self.onAdSize?(size)
         }
-        
     }
     
     public func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
         // should test app show an error?
-    }
-    
-    public func load()  {
-         if let adSlot = adSlotId, let vc = viewController {
-             Yieldlove.instance.bannerAd(
-                adSlotId: adSlot,
-                viewController: vc,
-                delegate: self
-             )
-         }
-     }
-    
-    func clearBanner() {
-        adView?.removeFromSuperview()
-        adView = nil
     }
     
     func getGAMRequest() -> AdManagerRequest {

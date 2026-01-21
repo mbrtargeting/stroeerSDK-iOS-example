@@ -10,8 +10,10 @@ import UIKit
 import YieldloveAdIntegration
 
 class BannerViewController: UIViewController {
-    
+    var slotId: String = ""
+    var onAdSize: ((CGSize) -> Void)?
     var bannerViewDelegate: BannerViewDelegate?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         GraviteLoader.shared.viewDidAppear(viewController: self)
@@ -21,6 +23,16 @@ class BannerViewController: UIViewController {
     {
         super.viewWillDisappear(animated)
         GraviteLoader.shared.viewWillDisappear(viewController: self)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.bannerViewDelegate = BannerViewDelegate(viewController: self, onAdSize: onAdSize)
+        Yieldlove.instance.bannerAd(
+            adSlotId: slotId,
+            viewController: self,
+            delegate: bannerViewDelegate!
+        )
     }
 }
 
