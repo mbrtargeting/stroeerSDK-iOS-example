@@ -19,7 +19,8 @@ class BannerViewDelegate: YLBannerViewDelegate {
         viewController.view.addSubview(bannerView)
 
         Yieldlove.instance.resizeBanner(banner: bannerView) {
-            let size = bannerView.intrinsicContentSize
+            bannerView.layoutIfNeeded()
+            let size = bannerView.getBannerSize()
             self.onAdSize?(size)
         }
     }
