@@ -2,36 +2,48 @@ import SwiftUI
 import YieldloveAdIntegration
 import GoogleMobileAds
 
-class BannerViewDelegate: YLBannerViewDelegate {
-    var viewController: UIViewController
-    var onAdSize: ((CGSize) -> Void)?
-    
+final class BannerViewDelegate: YLBannerViewDelegate {
+
+    private weak var viewController: UIViewController?
+    private var onAdSize: ((CGSize) -> Void)?
+
     init(viewController: UIViewController, onAdSize: ((CGSize) -> Void)? = nil) {
         self.viewController = viewController
         self.onAdSize = onAdSize
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
-        viewController.view.addSubview(bannerView)
 
-        Yieldlove.instance.resizeBanner(banner: bannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
+        guard let vc = viewController else { return }
+
+        // Removing any old banners
+        vc.view.subviews
+            .compactMap { $0 as? YLBannerView }
+            .forEach { $0.removeFromSuperview() }
+
+        bannerView.removeFromSuperview()
+
+        vc.view.addSubview(bannerView)
+
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bannerView.topAnchor.constraint(equalTo: vc.view.topAnchor),
+            bannerView.leadingAnchor.constraint(equalTo: vc.view.leadingAnchor),
+            bannerView.trailingAnchor.constraint(equalTo: vc.view.trailingAnchor),
+            bannerView.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor)
+        ])
+
+        Yieldlove.instance.resizeBanner(banner: bannerView) { [weak self] in
             bannerView.layoutIfNeeded()
-            let size = bannerView.getBannerSize()
-            self.onAdSize?(size)
+            self?.onAdSize?(bannerView.getBannerSize())
         }
     }
-    
-    public func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
-        // should test app show an error?
-    }
-    
+
+    func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {}
+
     func getGAMRequest() -> AdManagerRequest {
-        let publishersRequest = AdManagerRequest()
-        publishersRequest.contentURL = "http://jobs.stroeer-labs.com"
-        return publishersRequest
+        let req = AdManagerRequest()
+        req.contentURL = "http://jobs.stroeer-labs.com"
+        return req
     }
 }
+
