@@ -209,21 +209,21 @@ PODS:
     - TappxSDK/OMSDK_Tappx
   - UnityAds (4.12.4)
   - VungleAds (7.4.5)
-  - YieldloveAdIntegration/Consent (10.3.1):
+  - YieldloveAdIntegration/Consent (10.4.1):
     - ConsentViewController (~> 7.7.7)
     - YieldloveAdIntegration/Core
-  - YieldloveAdIntegration/Core (10.3.1):
+  - YieldloveAdIntegration/Core (10.4.1):
     - Google-Mobile-Ads-SDK (~> 12)
     - PrebidMobile (= 3.1.0)
     - PromiseKit (~> 8)
-  - YieldloveAdIntegration/Gravite (10.3.1):
+  - YieldloveAdIntegration/Gravite (10.4.1):
     - AATKit/Core (= 3.12.3)
     - YieldloveAdIntegration/Core
 
 DEPENDENCIES:
   - AATKit (= 3.12.3)
-  - YieldloveAdIntegration/Consent (= 10.3.1)
-  - YieldloveAdIntegration/Gravite (= 10.3.1)
+  - YieldloveAdIntegration/Consent (= 10.4.1)
+  - YieldloveAdIntegration/Gravite (= 10.4.1)
 
 SPEC REPOS:
   trunk:
@@ -276,8 +276,8 @@ SPEC CHECKSUMS:
   TappxSDK: 8099f23a66bb4d5facca3133d9fd69249a098b4d
   UnityAds: df29459d94ca7c0676cdd9ba96ef6420670ffbfa
   VungleAds: 1da221690dd1a8710d0b6a4c7aeac14cb12d31ab
-  YieldloveAdIntegration: 5a3dc09b8d3d9b47a107f06faedc90cb9b0c4c58
+  YieldloveAdIntegration: cc7dc2e2990925eaf515307a8a8f68f4a2f6f832
 
-PODFILE CHECKSUM: 4f48eddf07806235b50f38a697df83cb98984414
+PODFILE CHECKSUM: 471e05b92828f8c025391babc74f127972059376
 
 COCOAPODS: 1.16.2
