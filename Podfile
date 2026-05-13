@@ -10,12 +10,9 @@ target 'SimpleAdTest' do
   
   # For Confiant
 #  pod 'ConfiantSDK', '6.1.3'
-  # pod 'YieldloveAdIntegration', :podspec => 'https://slabs-yieldlove-ad-integration.s3.eu-central-1.amazonaws.com/ios/YieldloveAdIntegration-10.4.1.podspec', subspecs: ['Gravite', 'Confiant', 'Consent']
+  # pod 'YieldloveAdIntegration', :podspec => 'https://slabs-yieldlove-ad-integration.s3.eu-central-1.amazonaws.com/ios/YieldloveAdIntegration-10.5.0.podspec', subspecs: ['Gravite', 'Confiant', 'Consent']
   
-  # For Gravite
-  pod 'AATKit', '3.12.3'
-  pod 'YieldloveAdIntegration/Gravite', '10.4.1'
-  pod 'YieldloveAdIntegration/Consent', '10.4.1'
+  pod 'YieldloveAdIntegration/Consent', '10.5.0'
 
 end
 

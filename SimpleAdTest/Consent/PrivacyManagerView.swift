@@ -20,11 +20,12 @@ struct PrivacyManagerView : UIViewControllerRepresentable {
 }
 
 
-class DedicatedPrivacyManagerViewController: UIViewController, ConsentDelegate {
+class DedicatedPrivacyManagerViewController: UIViewController, StroeerConsentPublisherDelegate {
 
+    private var consent = StroeerConsent()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        YLConsent.instance.showPrivacyManager(viewController: self, delegate: self)
+        consent.showPrivacyManager(viewController: self, delegate: self)
     }
 
     func consentUIDidDisappear() {
@@ -35,7 +36,7 @@ class DedicatedPrivacyManagerViewController: UIViewController, ConsentDelegate {
         print("PM Ready - description: \(consents.description)")
     }
 
-    func onError(error: YieldloveConsentError) {
+    func onError(error: StroeerConsentError) {
         print("PM Error: \(error)")
     }
     

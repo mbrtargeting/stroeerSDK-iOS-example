@@ -22,6 +22,7 @@ class InterstitialView: NSObject, YLInterstitialAdDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @MainActor
     public func load()  {
          if let adSlot = adSlotId {
              let gamRequest = AdManagerRequest()

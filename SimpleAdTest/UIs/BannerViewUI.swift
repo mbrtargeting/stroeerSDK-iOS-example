@@ -8,34 +8,32 @@
 import Foundation
 import SwiftUI
 
-struct BannerViewUI: View {
+struct BannerViewUI : View
+{
+    @State private var size: CGSize = .zero
     
-    @State private var size1: CGSize = CGSize(width: 320, height: 50)
-    @State private var size2: CGSize = CGSize(width: 320, height: 50)
-
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+            }
+            
+            Spacer()
+            
             BannerViewRepresentable(
                 slotId: "banner",
                 onAdSize: { size in
-                    self.size1 = size
+                    self.size = size
                 }
             )
-            .frame(maxWidth: .infinity)
-            .frame(height: size1.height)
-
-            BannerViewRepresentable(
-                slotId: "banner",
-                onAdSize: { size in
-                    self.size2 = size
-                }
-            )
-            .frame(maxWidth: .infinity)
-            .frame(height: size2.height)
+            .frame(width: size.width, height: size.height)
+            
+            Spacer()
         }
         .padding(.horizontal)
     }
 }
+
 
 #Preview {
     BannerViewUI()

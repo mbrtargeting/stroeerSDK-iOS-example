@@ -1,18 +1,43 @@
-# Stroeer SDK – Ad Integration Examples for iOS  
+# Stroeer SDK – Ad Integration Examples for iOS
 
-## Release Notes – 10.3.1  
-**Release Date:** 2026-01-21  
+## Release Notes – 10.5.0
 
-## 🐞 Bug Fixes  
-- Refreshable Banner Crash issue Fixed
+**Release Date:** 2026-05-12
 
-- Memory Leaks Reduced
+### Highlights
 
-- Legacy App Freezing Issue Fixed
+- Added web-based debug pages.
+- Updated OpenRTB display manager values:
+  - `displaymanager`: `StroeerSDK`
+  - `displaymanagerver`: `10.5.0`
+- General bug fixes and stability improvements.
 
-- Reduced Memory Usage
+### Updated Third-Party Libraries
 
-## 📦 Library Updates  
-- Prebid Mobile 3.1.0  
+- **CMP:** `7.12.9`
+- **Google Mobile Ads SDK:** `12.11.0`
 
-## 📌 Notes  
+---
+
+## CocoaPods Distribution
+
+Starting with version `10.5.0`, the CocoaPods distribution is separated into:
+
+1. **Public CocoaPods distribution**
+2. **Private CocoaPods distribution**
+
+This separation allows the public release to use the latest supported Google Mobile Ads SDK version, while the private distribution continues to support integrations that require Gravite compatibility.
+
+---
+
+## Public CocoaPods Distribution
+
+The public CocoaPods release of `YieldloveAdIntegration` includes the following subspecs:
+
+- `Core`
+- `Consent`
+
+### Installation
+
+```ruby
+pod 'YieldloveAdIntegration', '10.5.0'

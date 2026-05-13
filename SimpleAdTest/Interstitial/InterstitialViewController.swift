@@ -22,7 +22,7 @@ class InterstitialViewController : UIViewController{
 }
 
 
-extension InterstitialViewController : ConsentDelegate {
+extension InterstitialViewController : StroeerConsentPublisherDelegate {
     /// called when there's a consent Message to be shown or before the PM is shown
     func onSPUIReady(){
         
@@ -39,7 +39,7 @@ extension InterstitialViewController : ConsentDelegate {
     }
 
     /// the `onError` function can be called at any moment during the SDKs lifecycle
-    func onError(error: YieldloveConsentError){
+    func onError(error: StroeerConsentError){
         
     }
     

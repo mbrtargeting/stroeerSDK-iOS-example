@@ -13,6 +13,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var showingSheet = [false, false, false,false]
+    @StateObject private var consent = StroeerConsent()
     
     var body: some View {
         
@@ -23,7 +24,7 @@ struct ContentView: View {
                        
                 Button(action: {
                     if let viewController = UIApplication.shared.windows.first?.rootViewController {
-                        YLConsent.instance.collect(viewController: viewController, delegate: ConsentHandler())
+                        consent.collect(viewController: viewController, delegate: ConsentHandler())
                     }
                 }) {
                     Text("Consent").font(.title).padding([.top], 50)

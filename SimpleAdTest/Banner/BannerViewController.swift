@@ -6,37 +6,70 @@
 //
 
 import Foundation
-import UIKit
+import GoogleMobileAds
 import YieldloveAdIntegration
 
-class BannerViewController: UIViewController {
+class BannerViewController: UIViewController, YLBannerViewDelegate {
     var slotId: String = ""
     var onAdSize: ((CGSize) -> Void)?
-    var bannerViewDelegate: BannerViewDelegate?
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        GraviteLoader.shared.viewDidAppear(viewController: self)
-    }
-            
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        GraviteLoader.shared.viewWillDisappear(viewController: self)
-    }
-    
+
+    private var bannerView: YLBannerView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bannerViewDelegate = BannerViewDelegate(viewController: self, onAdSize: onAdSize)
-        Yieldlove.instance.bannerAd(
+
+        view.backgroundColor = .clear
+
+        print("[BANNER_LOAD] slot=\(slotId)")
+
+        let bannerView = Yieldlove.instance.bannerAd(
             adSlotId: slotId,
             viewController: self,
-            delegate: bannerViewDelegate!
+            delegate: self
         )
+        self.bannerView = bannerView
+        view.addSubview(bannerView)
+    }
+
+    func getGAMRequest() -> AdManagerRequest {
+        let request = AdManagerRequest()
+        request.contentURL = "https://www.stroeer.de/"
+        
+        return request
+    }
+
+    func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
+        print("banner size = \(bannerView.getBannerSize())")
+        onAdSize?(bannerView.getBannerSize())
+    }
+
+    func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
+        print("[BANNER_ERROR] slot=\(bannerView.bannerInfo.adUnit) error=\(error.localizedDescription)")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: YLBannerView) {
+        print("PRESENTED!!! for \(bannerView.bannerInfo.adUnit)")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: YLBannerView) {
+        print("DISMISSED!!! for \(bannerView.bannerInfo.adUnit)")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: YLBannerView) {
+        print("DISMISSED!!! for \(bannerView.bannerInfo.adUnit)")
+    }
+
+    func bannerViewDidRecordClick(_ bannerView: YLBannerView) {
+        print("CLICKED!!! for \(bannerView.bannerInfo.adUnit)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: YLBannerView) {
+        print("IMPRESSION!!! for \(bannerView.bannerInfo.adUnit)")
     }
 }
 
-extension BannerViewController : ConsentDelegate {
+
+extension BannerViewController : StroeerConsentPublisherDelegate {
     /// called when there's a consent Message to be shown or before the PM is shown
     func onSPUIReady(){
         
@@ -53,7 +86,7 @@ extension BannerViewController : ConsentDelegate {
     }
 
     /// the `onError` function can be called at any moment during the SDKs lifecycle
-    func onError(error: YieldloveConsentError){
+    func onError(error: StroeerConsentError){
         
     }
     
