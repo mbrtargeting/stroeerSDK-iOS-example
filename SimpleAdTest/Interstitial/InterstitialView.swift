@@ -30,7 +30,6 @@ class InterstitialView: NSObject, YLInterstitialAdDelegate {
             Yieldlove.instance.interstitialAd(
                 adSlotId: adSlot,
                 interstitialDelegate:  self,
-                viewController: viewController!,
                 request: gamRequest)
          }
      }

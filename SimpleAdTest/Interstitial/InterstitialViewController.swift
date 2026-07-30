@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 import YieldloveAdIntegration
+import YieldloveAdIntegration_Consent
+import ConsentViewController
 
 class InterstitialViewController : UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        GraviteLoader.shared.viewDidAppear(viewController: self)
     }
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
-        GraviteLoader.shared.viewWillDisappear(viewController: self)
     }
 }
 

@@ -8,6 +8,8 @@
 import SwiftUI
 import SwiftData
 import YieldloveAdIntegration
+import YieldloveAdIntegration_Consent
+import ConsentViewController
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext

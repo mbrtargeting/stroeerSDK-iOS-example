@@ -1,58 +1,40 @@
 PODS:
-  - ConsentViewController (7.12.9):
-    - SPMobileCore (= 0.1.13)
-  - GCDWebServer (3.5.4):
-    - GCDWebServer/Core (= 3.5.4)
-  - GCDWebServer/Core (3.5.4)
-  - Google-Mobile-Ads-SDK (12.11.0):
+  - ConsentViewController (7.12.10):
+    - SPMobileCore (= 0.1.16)
+  - Google-Mobile-Ads-SDK (12.14.0):
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleUserMessagingPlatform (3.1.0)
-  - PrebidMobile (3.1.0):
-    - PrebidMobile/core (= 3.1.0)
-  - PrebidMobile/core (3.1.0)
-  - PromiseKit (8.2.0):
-    - PromiseKit/CorePromise (= 8.2.0)
-    - PromiseKit/Foundation (= 8.2.0)
-    - PromiseKit/UIKit (= 8.2.0)
-  - PromiseKit/CorePromise (8.2.0)
-  - PromiseKit/Foundation (8.2.0):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (8.2.0):
-    - PromiseKit/CorePromise
-  - SPMobileCore (0.1.13)
-  - YieldloveAdIntegration/Consent (10.5.0):
+  - PrebidMobile (3.3.1):
+    - PrebidMobile/core (= 3.3.1)
+  - PrebidMobile/core (3.3.1)
+  - SPMobileCore (0.1.16)
+  - YieldloveAdIntegration/Consent (10.5.3):
     - ConsentViewController (~> 7.12)
     - YieldloveAdIntegration/Core
-  - YieldloveAdIntegration/Core (10.5.0):
-    - GCDWebServer (~> 3.5)
-    - Google-Mobile-Ads-SDK (= 12.11.0)
-    - PrebidMobile (= 3.1.0)
-    - PromiseKit (~> 8)
+  - YieldloveAdIntegration/Core (10.5.3):
+    - Google-Mobile-Ads-SDK (= 12.14.0)
+    - PrebidMobile (= 3.3.1)
 
 DEPENDENCIES:
-  - YieldloveAdIntegration/Consent (= 10.5.0)
+  - YieldloveAdIntegration/Consent (= 10.5.3)
 
 SPEC REPOS:
   trunk:
     - ConsentViewController
-    - GCDWebServer
     - Google-Mobile-Ads-SDK
     - GoogleUserMessagingPlatform
     - PrebidMobile
-    - PromiseKit
     - SPMobileCore
     - YieldloveAdIntegration
 
 SPEC CHECKSUMS:
-  ConsentViewController: cf08c4d9e1e94683f91455f6ba9784c23d80b086
-  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  Google-Mobile-Ads-SDK: b833c723759e32bbaf06edaaf2293f08ed898232
+  ConsentViewController: d5f5f472225922b8cf0575c67347694b485b7d3e
+  Google-Mobile-Ads-SDK: 4534fd2dfcd3f705c5485a6633c5188d03d4eed2
   GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
-  PrebidMobile: 046bb6220157c7332dc6c6e19a99397bb481ac3a
-  PromiseKit: 74e6ab5894856b4762fef547055c809bca91d440
-  SPMobileCore: 2a77dd31b40f1457ef9df14a0e72163fa00d87c0
-  YieldloveAdIntegration: 193d4d4dfb9c7bae93c81243915bd3a692fffe70
+  PrebidMobile: ee7a59963c71e08baae66d8934df228ccf3648c7
+  SPMobileCore: 4cb29cc8357c679cd95bc239d5aafea0bb8cd73e
+  YieldloveAdIntegration: ff1486bc783ae7faee9f22de52953eaf4a3e74cf
 
-PODFILE CHECKSUM: 000d41e4a33369df759b2d4825f665da0399a2ee
+PODFILE CHECKSUM: 470162f7380084b0271f0d8cae5822209183e6bb
 
-COCOAPODS: 1.16.2
+COCOAPODS: 1.17.0
