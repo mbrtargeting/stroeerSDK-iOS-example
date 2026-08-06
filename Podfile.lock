@@ -8,15 +8,15 @@ PODS:
     - PrebidMobile/core (= 3.3.1)
   - PrebidMobile/core (3.3.1)
   - SPMobileCore (0.1.16)
-  - YieldloveAdIntegration/Consent (10.5.3):
+  - YieldloveAdIntegration/Consent (10.6.0):
     - ConsentViewController (~> 7.12)
     - YieldloveAdIntegration/Core
-  - YieldloveAdIntegration/Core (10.5.3):
+  - YieldloveAdIntegration/Core (10.6.0):
     - Google-Mobile-Ads-SDK (= 12.14.0)
     - PrebidMobile (= 3.3.1)
 
 DEPENDENCIES:
-  - YieldloveAdIntegration/Consent (= 10.5.3)
+  - YieldloveAdIntegration/Consent (= 10.6.0)
 
 SPEC REPOS:
   trunk:
@@ -33,8 +33,8 @@ SPEC CHECKSUMS:
   GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
   PrebidMobile: ee7a59963c71e08baae66d8934df228ccf3648c7
   SPMobileCore: 4cb29cc8357c679cd95bc239d5aafea0bb8cd73e
-  YieldloveAdIntegration: ff1486bc783ae7faee9f22de52953eaf4a3e74cf
+  YieldloveAdIntegration: 381d15df639644779f81323fe42ed1c03633b425
 
-PODFILE CHECKSUM: 470162f7380084b0271f0d8cae5822209183e6bb
+PODFILE CHECKSUM: 4a8c35f2b35533628b797b2510bd4853522656c9
 
 COCOAPODS: 1.17.0

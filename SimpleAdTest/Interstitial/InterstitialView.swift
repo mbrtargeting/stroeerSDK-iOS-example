@@ -12,6 +12,7 @@ class InterstitialView: NSObject, YLInterstitialAdDelegate {
     private var adSlotId: String?
     weak var viewController: UIViewController?
     weak var interstitial: AdManagerInterstitialAd?
+    var interstitialView: StroeerInterstitialView?
     
     init(adSlotId: String, viewController: UIViewController) {
         self.adSlotId = adSlotId
@@ -27,7 +28,7 @@ class InterstitialView: NSObject, YLInterstitialAdDelegate {
          if let adSlot = adSlotId {
              let gamRequest = AdManagerRequest()
             gamRequest.contentURL = "www.example.com"
-            Yieldlove.instance.interstitialAd(
+             self.interstitialView = Yieldlove.instance.interstitialAd(
                 adSlotId: adSlot,
                 interstitialDelegate:  self,
                 request: gamRequest)
